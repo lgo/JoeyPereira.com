@@ -1,0 +1,24 @@
+{% extends "topbar.j2" %}
+{% from "macros.j2" import render_post with context  %}
+
+{% block container -%}
+<article>
+
+<h1>
+    <a href="{{ content_url(resource.url) }}">
+        {{ resource.meta.title }}
+    </a>
+</h1>
+<time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">
+    Created: {{ resource.meta.created.strftime('%d %b %Y') }}
+</time>
+<p> Stage: {{ resource.meta.stage }} </p>
+<hr>
+{% filter markdown|typogrify -%}
+{% mark post -%}
+{% block post -%}{%- endblock %}
+{%- endmark %}
+{%- endfilter %}
+</article>
+
+{%- endblock %}

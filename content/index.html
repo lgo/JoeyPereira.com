@@ -1,0 +1,35 @@
+---
+title: Home
+description: The home of Joey Pereira
+---
+{% extends "fullwidth.j2" %}
+
+{% block leadtext %}
+Hi there! Currently, if you're wondering, I'm a [Computer Science][CS] student at the [University of Waterloo][UW], located in Ontario, Canada. I have a strong passion for what I study, and love solving problems using what I've learned! Among my learning is prospective studies in machine learning, language theory
+[CS]: http://cs.uwaterloo.ca
+[UW]: http://uwaterloo.ca
+{% endblock %}
+
+{% block content %}
+{% filter markdown -%}
+Personal projects, pitiful posts and plentiful conundrums relevant to myself. That is what I hope to encompass this site with over time.
+
+Projects I find are always a good way to get some time past. I also believe they are vital to fully understanding concepts and when working on various projects what better way to solve problems than the many you encounter! Check out some more of my [projects][P]!
+[P]: {{ content_url("projects") }}
+{% endfilter %}
+
+<span style="text-align: left"><h3>Recent Articles</h3></span>
+<span class="row">
+    {% for grp, res_walker in site.content.walk_level_groups() %}
+        {% if grp.name == "posts" %}
+            {% for res in res_walker %}
+                {% if loop.index0 < 5 %} 
+                    {{ render_box(res) }}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+</span>
+{% filter markdown -%}
+{% endfilter %}
+{% endblock %}

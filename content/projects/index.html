@@ -1,0 +1,19 @@
+---
+title: Projects
+extends: listing.j2
+listable: false
+---
+
+{% block page_list %}
+<span style="padding: 0 15px;">
+    <span class="row">
+  {{ super() }}
+    </span>
+</span>
+
+{% endblock %}
+
+{% block page_node scoped %}{{ render_box(res) }}{% endblock %}
+
+{% block upper_loop %}</span>{% endblock %}
+{% block lower_loop %}<span class="row">{% endblock %}
