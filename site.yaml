@@ -17,7 +17,7 @@ context:
             url: "http://joeypereira.com"
         google_analytics_id: UA-46626177-1
         home_url: index.html
-        site_url: "http://joeypereira.com"
+        url: "http://joeypereira.com"
         menu:
             - title: Home
               type: page
