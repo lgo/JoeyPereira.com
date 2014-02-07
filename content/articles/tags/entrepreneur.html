@@ -4,7 +4,7 @@ listable: true
 
 ---
 
-{% set tag = site.tagger.tags['entrepenuer'] %}
+{% set tag = site.tagger.tags['entrepreneur'] %}
 {% set source = site.content.node_from_relative_path('articles') %}
-{% set walker = source['walk_resources_tagged_with_entrepenuer'] %}
+{% set walker = source['walk_resources_tagged_with_entrepreneur'] %}
 {% extends "tagged_posts.j2" %}
